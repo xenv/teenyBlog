@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8">
+    <title>notes.cx</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+    <meta name="description" content="我的编程笔记"/>
+
+    <style type="text/css">
+	* {
+	    padding: 0;
+	    margin: 0;
+	    border: none;
+	    outline: 0
+	}
+	body {
+	    font-family: Montserrat,Helvetica Neue,Hiragino Sans GB,LiHei Pro,Arial,sans-serif;
+	    font-weight: 400;
+	    font-size: 16px;
+	    color: #39434d;
+	    letter-spacing: .5px;
+	    background-size: cover;
+	}
+	a {
+	    text-decoration: none;
+	    color: #747677;
+	}
+	p {
+    	margin-bottom: 1.5em;
+    	letter-spacing: 2px;
+    	color: gray;
+	}
+	#root {
+	    max-width: 90%;
+	    width: 720px;
+	    margin: 3em auto;
+	    display: block;
+	}
+	#header {
+	    position: relative;
+	    padding: .3em 0;
+	    border-bottom: 1px solid #d8dadc;
+	}
+	#header h1 {
+	    margin: 0;
+	    padding: 0;
+	}
+	#header .link {
+	    position: absolute;
+	    bottom: 1px;
+	    right: 0;
+	    line-height: 21px;
+	}
+	#header a {
+	    color: #0e1a26;
+	}
+	#nav-menu {
+		margin-left: -5px;
+	}
+	#nav-menu a {
+    	margin: 0 5px;
+	}
+	.link img {
+	    width: 15px;
+	    height: 15px;
+	}
+	.post {
+	    padding: .7em 0;
+	}
+	.post-meta, .post-meta a {
+	    color: #8796a3;
+	}
+	.post-item {
+	    padding: .4em;
+	    padding-left: 0;
+	    list-style: none;
+	    letter-spacing: 1px;
+	    margin: 0;
+	}
+	#footer {
+	    margin-top: 2em;
+	    font-size: 14px;
+	}
+
+	#footer {
+	    text-align: center;
+	}
+
+    </style>
+</head>
+
+<body>
+<div id="root">
+    <header id="header">
+        <h1><a id="logo" href="https://notes.cx/">notes.cx</a></h1>
+    	<p class="description">我的编程笔记</p>
+	    <nav id="nav-menu" role="navigation">
+	    	<a class="current" href="http://notes.cx/">首页</a>
+	        <a class="current" href="https://yuque.com/page/blog/about">关于</a>
+	    </nav>
+	    <div class="link">
+	        <a target="_blank" href="https://github.com/xenv"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png"></a>
+	    </div>
+	</header>
+ <div id="main" role="main">
+  	<div class="content">
+		<article class="post">
+			 <ul>
+				<li class="post-item" v-for="post in posts">
+					<div v-if="post.title === '博客首页'">
+					</div>
+					<div v-else-if="post.depth == 1">
+						{{post.title}}
+					</div>
+					<div v-else="post.depth >= 2" :style="{paddingLeft: (post.depth-1) * 25 + 'px'}">
+						<a :href="'https://yuque.com/page/blog/' + post.slug" target="_blank">{{post.title}}</a>
+					</div>
+				</li>
+			</ul>
+		</article>
+	</div>
+
+</div> 
+<script type="text/javascript">
+var app = new Vue({
+  el: '#main',
+  data: {
+    posts: []
+  	},
+   	methods: {
+        getPosts: function() {
+            var _this = this;
+            axios.get('http://szukd.sinaapp.com/yq_proxy/list.php',{}) // 需要自行代理 
+            .then(function(res) {
+                _this.init(res);
+            }).catch(function(res) {
+                console.log(res);
+            });
+        },
+        init: function(res) {
+            this.posts = res.data.data;
+        }
+    },
+    mounted:function(){
+        this.getPosts();
+    }
+})
+</script>
+<footer id="footer">
+    © 2018 Notes.cx Powered by <a target="_blank" href="http://github.com/xenv/teenyBlog">teenyBlog</a>
+</footer>
+
+</div>
+</body>
