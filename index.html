@@ -114,6 +114,9 @@
 					<div v-else-if="post.depth == 1">
 						{{post.title}}
 					</div>
+					<div v-else-if="post.slug === '#'" :style="{paddingLeft: (post.depth-1) * 25 + 'px'}">
+						{{post.title}}
+					</div>
 					<div v-else="post.depth >= 2" :style="{paddingLeft: (post.depth-1) * 25 + 'px'}">
 						<a :href="'https://yuque.com/page/notes.cx/' + post.slug" target="_blank">{{post.title}}</a>
 					</div>
