@@ -17,7 +17,7 @@ __演示：__[http://notes.cx](http://notes.cx)
 我这里给出一个PHP的代理源码：
 ```php
 <?php
-//memcache缓存，不登陆每个小时有200次访问API的机会，所以必须要缓存
+//memcache缓存，加快访问速度，带token每小时可以被访问5000次，也可以不带缓存
 $mmc = memcache_init();
 $res = $mmc->get("yuque_cache");
 if(empty($res)){
@@ -36,7 +36,8 @@ function getData(){
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     $header=array(  
     "Content-Type: application/x-www-form-urlencoded",  
-    "User-Agent: myProxy"
+    "User-Agent: myProxy", //官方文档要求必须带一个
+    "X-Auth-Token: YXDQoZMhHxNw1" //在个人设置页面获取，没有这个的话，一个小时只能请求200次
     );
     curl_setopt($ch,CURLOPT_HTTPHEADER,$header);
     $res = curl_exec($ch);
