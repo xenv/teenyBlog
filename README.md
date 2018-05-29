@@ -4,7 +4,7 @@ teenyBlog可能是全球第二小的博客系统，是的，__它只有一个页
 <br>
 本项目依赖 [语雀](http://yuque.com) 提供后台管理和API。页面渲染采用 vue，获取数据使用 axios。
 
-__演示：__[http://notes.cx](http://notes.cx)
+__演示：__[http://code.wf](http://code.wf)
 
 
 ---
