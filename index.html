@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta charset="utf-8">
-    <title>code.wf</title>
+    <title>乱码</title>
     <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
     <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
     <meta name="description" content="我的编程笔记"/>
@@ -94,11 +94,11 @@
 <body>
 <div id="root">
     <header id="header">
-        <h1><a id="logo">code.wf</a></h1>
+        <h1><a id="logo">乱码</a></h1>
     	<p class="description">我的编程笔记</p>
 	    <nav id="nav-menu" role="navigation">
-	    	<a class="current" href="http://code.wf/">首页</a>
-	        <a class="current" href="https://yuque.com/page/code.wf/about" target="_blank">关于</a>
+	    	<a class="current" href="./">首页</a>
+	        <a class="current" href="https://yuque.com/page/luan.ma/about" target="_blank">关于</a>
 	    </nav>
 	    <div class="link">
 	        <a target="_blank" href="https://github.com/xenv"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png"></a>
@@ -112,7 +112,7 @@
 					<div v-if="post.title === '博客首页'"></div> <!--这个用来在语雀那边返回这里的，这里判断掉不要-->
 					<div v-else :style="{paddingLeft: (post.depth-1) * 25 + 'px'}">
 						<a v-if = "post.slug === '#'" :style="{fontWeight: post.depth == 1 ? 700:500}">{{post.title}}</a>
-						<a v-else :href="'https://yuque.com/page/code.wf/' + post.slug" target="_blank">{{post.title}}</a>
+						<a v-else :href="'https://yuque.com/page/luan.ma/' + post.slug" target="_blank">{{post.title}}</a>
 					</div>
 				</li>
 			</ul>
@@ -146,7 +146,7 @@ var app = new Vue({
 })
 </script>
 <footer id="footer">
-    © 2018 code.wf Powered by <a target="_blank" href="http://github.com/xenv/teenyBlog">teenyBlog</a>
+    © 2018 Luan.Ma Powered by <a target="_blank" href="http://github.com/xenv/teenyBlog">teenyBlog</a>
 </footer>
 
 </div>
