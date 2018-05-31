@@ -94,6 +94,59 @@
 	    text-align: center;
 	}
 
+	.spinner {
+	  margin: 100px auto;
+	  width: 50px;
+	  height: 60px;
+	  text-align: center;
+	  font-size: 10px;
+	}
+	 
+	.spinner > div {
+	  background-color: #B0B0B0;
+	  height: 100%;
+	  width: 4px;
+	  display: inline-block;
+	   
+	  -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+	  animation: stretchdelay 1.2s infinite ease-in-out;
+	}
+	 
+	.spinner .rect2 {
+	  -webkit-animation-delay: -1.1s;
+	  animation-delay: -1.1s;
+	}
+	 
+	.spinner .rect3 {
+	  -webkit-animation-delay: -1.0s;
+	  animation-delay: -1.0s;
+	}
+	 
+	.spinner .rect4 {
+	  -webkit-animation-delay: -0.9s;
+	  animation-delay: -0.9s;
+	}
+	 
+	.spinner .rect5 {
+	  -webkit-animation-delay: -0.8s;
+	  animation-delay: -0.8s;
+	}
+	 
+	@-webkit-keyframes stretchdelay {
+	  0%, 40%, 100% { -webkit-transform: scaleY(0.4) } 
+	  20% { -webkit-transform: scaleY(1.0) }
+	}
+	 
+	@keyframes stretchdelay {
+	  0%, 40%, 100% {
+	    transform: scaleY(0.4);
+	    -webkit-transform: scaleY(0.4);
+	  }  20% {
+	    transform: scaleY(1.0);
+	    -webkit-transform: scaleY(1.0);
+	  }
+	}
+
     </style>
 </head>
 
@@ -105,12 +158,21 @@
 	    <nav id="nav-menu" role="navigation">
 	    	<a class="current" href="./">首页</a>
 	        <a class="current" href="https://yuque.com/page/luan.ma/about" target="_blank">关于</a>
+	        <a href="https://mibiao.app/domains" target="_blank">米表</a>
 	    </nav>
 	    <div class="link">
 	        <a target="_blank" href="https://github.com/xenv"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png"></a>
 	    </div>
 	</header>
  <div id="main" role="main">
+
+	<div class="spinner" v-show="loading">
+	  <div class="rect1"></div>
+	  <div class="rect2"></div>
+	  <div class="rect3"></div>
+	  <div class="rect4"></div>
+	  <div class="rect5"></div>
+	</div>
   	<div class="content">
 		<article class="post">
 			 <ul>
@@ -130,7 +192,8 @@
 var app = new Vue({
   el: '#main',
   data: {
-    posts: []
+    posts: [],
+    loading: true
   	},
    	methods: {
         getPosts: function() {
@@ -138,6 +201,7 @@ var app = new Vue({
             axios.get('http://szukd.sinaapp.com/yq_proxy/list.php',{}) // 需要自行代理 
             .then(function(res) {
                 _this.init(res);
+                _this.loading = false;
             }).catch(function(res) {
                 console.log(res);
             });
