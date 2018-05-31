@@ -1,6 +1,6 @@
 # teenyBlog
 
-teenyBlog可能是全球第二小的博客系统，是的，__它只有一个页面__，153行代码。
+teenyBlog可能是全球第二小的博客系统，是的，__它只有一个页面__。
 <br>
 本项目依赖 [语雀](http://yuque.com) 提供后台管理和API。页面渲染采用 vue，获取数据使用 axios。
 
@@ -11,8 +11,8 @@ __演示：__[http://luan.ma](http://luan.ma)
 
 ## 安装方法
 1. 在 [语雀](http://yuque.com) 创建知识库，并设置权限为公开，这里举例知识库的url最后为 /user/repo 
-2. 修改index.html中的 115 行 `v-else :href=`  修改为自己的知识库地址
-3. 修改index.html中 132 行 `axios.get()`中的地址改为 `https://yuque.com/api/v2/repos/user/repo/toc`  的自行代理地址。
+2. 搜索 index.html中的  `v-else :href=`  修改为自己的知识库地址
+3. 搜索 index.html 中  `axios.get(` 地址改为 `https://yuque.com/api/v2/repos/user/repo/toc`  的自行代理地址。
 很遗憾，语雀API并不提供跨域支持，所以您必须对该API进行代理后才能使用。也许日后会放开这个限制。
 我这里给出一个PHP的代理源码：
 ```php
