@@ -23,6 +23,9 @@
 	    letter-spacing: .5px;
 	    background-size: cover;
 	}
+	h1 {
+		font-size: 1.8em;
+	}
 	a {
 	    text-decoration: none;
 	    color: #747677;
@@ -72,6 +75,9 @@
 	.post-meta, .post-meta a {
 	    color: #8796a3;
 	}
+	a.link {
+		color:#222;
+	}
 	.post-item {
 	    padding: .4em;
 	    padding-left: 0;
@@ -111,8 +117,8 @@
 				<li class="post-item" v-for="post in posts">
 					<div v-if="post.title === '博客首页'"></div> <!--这个用来在语雀那边返回这里的，这里判断掉不要-->
 					<div v-else :style="{paddingLeft: (post.depth-1) * 25 + 'px'}">
-						<a v-if = "post.slug === '#'" :style="{fontWeight: post.depth == 1 ? 700:500}">{{post.title}}</a>
-						<a v-else :href="'https://yuque.com/page/luan.ma/' + post.slug" target="_blank">{{post.title}}</a>
+						<a v-if = "post.slug === '#'" :style="{fontSize: post.depth == 1 ? '18px':'17px'}">{{post.title}}</a>
+						<a v-else :href="'https://yuque.com/page/luan.ma/' + post.slug" target="_blank" class="link">{{post.title}}</a>
 					</div>
 				</li>
 			</ul>
@@ -148,6 +154,7 @@ var app = new Vue({
 <footer id="footer">
     © 2018 Luan.Ma Powered by <a target="_blank" href="http://github.com/xenv/teenyBlog">teenyBlog</a>
 </footer>
+
 
 </div>
 </body>
