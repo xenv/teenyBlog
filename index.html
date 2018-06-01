@@ -4,8 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta charset="utf-8">
     <title>乱码</title>
-    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
-    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
     <meta name="description" content="我的编程笔记"/>
 
     <style type="text/css">
@@ -90,6 +88,12 @@
 	    font-size: 14px;
 	    text-align: center;
 	}
+
+	#footer .line{
+		line-height: 25px;	    
+	}
+
+
 	.spinner {
 	  margin: 100px auto;
 	  width: 50px;
@@ -160,30 +164,41 @@
 	        <a target="_blank" href="https://github.com/xenv"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png"></a>
 	    </div>
 	</header>
- <div id="main" role="main">
+	<div id="main" role="main">
 
-	<div class="spinner" v-show="loading">
-	  <div class="rect1"></div>
-	  <div class="rect2"></div>
-	  <div class="rect3"></div>
-	  <div class="rect4"></div>
-	  <div class="rect5"></div>
-	</div>
-  	<div class="content">
-		<article class="post">
-			 <ul>
-				<li class="post-item" v-for="post in posts">
-					<div v-if="post.title === '博客首页'"></div> <!--这个用来在语雀那边返回这里的，这里判断掉不要-->
-					<div v-else :style="{paddingLeft: (post.depth-1) * 25 + 'px'}">
-						<a v-if = "post.slug === '#'" :style="{fontSize: post.depth == 1 ? '18px':'17px'}">{{post.title}}</a>
-						<a v-else :href="'https://yuque.com/page/luan.ma/' + post.slug" target="_blank" class="link">{{post.title}}</a>
-					</div>
-				</li>
-			</ul>
-		</article>
-	</div>
+		<div class="spinner" v-show="loading">
+		  <div class="rect1"></div>
+		  <div class="rect2"></div>
+		  <div class="rect3"></div>
+		  <div class="rect4"></div>
+		  <div class="rect5"></div>
+		</div>
+	  	<div class="content">
+			<article class="post">
+				 <ul>
+					<li class="post-item" v-for="post in posts">
+						<div v-if="post.title === '博客首页'"></div> <!--这个用来在语雀那边返回这里的，这里判断掉不要-->
+						<div v-else :style="{paddingLeft: (post.depth-1) * 25 + 'px'}">
+							<a v-if = "post.slug === '#'" :style="{fontSize: post.depth == 1 ? '18px':'17px'}" v-text="post.title"></a>
+							<a v-else :href="'https://yuque.com/page/luan.ma/' + post.slug" target="_blank" class="link" v-text="post.title"></a>
+						</div>
+					</li>
+				</ul>
+			</article>
+		</div>
 
-</div> 
+	</div> 
+	<footer id="footer">
+		<div class="line">
+	        友情链接：<a href="#">暂无</a>
+	    </div>
+	    <div class="line">
+	    	© 2018 Luan.Ma Powered by <a target="_blank" href="https://github.com/xenv/teenyBlog">teenyBlog</a>
+		</div>
+	</footer>
+</div>
+<script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
 <script type="text/javascript">
 var app = new Vue({
   el: '#main',
@@ -194,7 +209,7 @@ var app = new Vue({
    	methods: {
         getPosts: function() {
             var _this = this;
-            axios.get('http://szukd.sinaapp.com/yq_proxy/list.php',{}) // 需要自行代理 
+            axios.get('https://szukd.applinzi.com/yq_proxy/list.php',{}) // 需要自行代理 
             .then(function(res) {
                 _this.init(res);
                 _this.loading = false;
@@ -211,10 +226,6 @@ var app = new Vue({
     }
 })
 </script>
-<footer id="footer">
-    © 2018 Luan.Ma Powered by <a target="_blank" href="http://github.com/xenv/teenyBlog">teenyBlog</a>
-</footer>
 
 
-</div>
 </body>
