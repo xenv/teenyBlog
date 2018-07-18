@@ -3,149 +3,150 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta charset="utf-8">
-    <title>乱码</title>
-    <meta name="description" content="我的编程笔记"/>
+    <title>博客标题</title>
+    <meta name="description" content="博客描述"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
 
     <style type="text/css">
-	* {
-	    padding: 0;
-	    margin: 0;
-	    border: none;
-	    outline: 0
-	}
-	body {
-	    font-family: Montserrat,Helvetica Neue,Hiragino Sans GB,LiHei Pro,Arial,sans-serif;
-	    font-weight: 400;
-	    font-size: 16px;
-	    color: #39434d;
-	    letter-spacing: .5px;
-	    background-size: cover;
-	}
-	h1 {
-		font-size: 1.8em;
-	}
-	a {
-	    text-decoration: none;
-	    color: #747677;
-	}
-	p {
-    	margin-bottom: 1.5em;
-    	letter-spacing: 2px;
-    	color: gray;
-	}
-	#root {
-	    max-width: 90%;
-	    width: 720px;
-	    margin: 3em auto;
-	    display: block;
-	}
-	#header {
-	    position: relative;
-	    padding: .3em 0;
-	    border-bottom: 1px solid #d8dadc;
-	}
-	#header h1 {
-	    margin: 0;
-	    padding: 0;
-	}
-	#header .link {
-	    position: absolute;
-	    bottom: -2px;
-	    right: 0;
-	    line-height: 21px;
-	}
-	#header a {
-	    color: #0e1a26;
-	}
-	#nav-menu {
-		margin-left: -5px;
-	}
-	#nav-menu a {
-    	margin: 0 5px;
-	}
-	.link img {
-	    width: 25px;
-	    height: 25px;
-	}
-	.post {
-	    padding: .7em 0;
-	}
-	.post-meta, .post-meta a {
-	    color: #8796a3;
-	}
-	a.link {
-		color:#222;
-	}
-	.post-item {
-	    padding: .4em;
-	    padding-left: 0;
-	    list-style: none;
-	    letter-spacing: 1px;
-	    margin: 0;
-	}
-	#footer {
-	    margin-top: 2em;
-	    font-size: 14px;
-	    text-align: center;
-	}
+        * {
+            padding: 0;
+            margin: 0;
+            border: none;
+            outline: 0
+        }
+        body {
+            font-family: Montserrat,Helvetica Neue,Hiragino Sans GB,LiHei Pro,Arial,sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #39434d;
+            letter-spacing: .5px;
+            background-size: cover;
+        }
+        h1 {
+            font-size: 1.8em;
+        }
+        a {
+            text-decoration: none;
+            color: #747677;
+        }
+        p {
+            margin-bottom: 1.5em;
+            letter-spacing: 2px;
+            color: gray;
+        }
+        #root {
+            max-width: 90%;
+            width: 720px;
+            margin: 3em auto;
+            display: block;
+        }
+        #header {
+            position: relative;
+            padding: .3em 0;
+            border-bottom: 1px solid #d8dadc;
+        }
+        #header h1 {
+            margin: 0;
+            padding: 0;
+        }
+        #header .link {
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            line-height: 21px;
+        }
+        #header a {
+            color: #0e1a26;
+        }
+        #nav-menu {
+            margin-left: -5px;
+        }
+        #nav-menu a {
+            margin: 0 5px;
+        }
+        .link img {
+            width: 25px;
+            height: 25px;
+        }
+        .post {
+            padding: .7em 0;
+        }
+        .post-meta, .post-meta a {
+            color: #8796a3;
+        }
+        a.link {
+            color:#222;
+        }
+        .post-item {
+            padding: .4em;
+            padding-left: 0;
+            list-style: none;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+        #footer {
+            margin-top: 2em;
+            font-size: 14px;
+            text-align: center;
+        }
 
-	#footer .line{
-		line-height: 25px;	    
-	}
+        #footer .line{
+            line-height: 25px;
+        }
 
 
-	.spinner {
-	  margin: 100px auto;
-	  width: 50px;
-	  height: 60px;
-	  text-align: center;
-	  font-size: 10px;
-	}
-	 
-	.spinner > div {
-	  background-color: #B0B0B0;
-	  height: 100%;
-	  width: 4px;
-	  display: inline-block;
-	   
-	  -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
-	  animation: stretchdelay 1.2s infinite ease-in-out;
-	}
-	 
-	.spinner .rect2 {
-	  -webkit-animation-delay: -1.1s;
-	  animation-delay: -1.1s;
-	}
-	 
-	.spinner .rect3 {
-	  -webkit-animation-delay: -1.0s;
-	  animation-delay: -1.0s;
-	}
-	 
-	.spinner .rect4 {
-	  -webkit-animation-delay: -0.9s;
-	  animation-delay: -0.9s;
-	}
-	 
-	.spinner .rect5 {
-	  -webkit-animation-delay: -0.8s;
-	  animation-delay: -0.8s;
-	}
-	 
-	@-webkit-keyframes stretchdelay {
-	  0%, 40%, 100% { -webkit-transform: scaleY(0.4) } 
-	  20% { -webkit-transform: scaleY(1.0) }
-	}
-	 
-	@keyframes stretchdelay {
-	  0%, 40%, 100% {
-	    transform: scaleY(0.4);
-	    -webkit-transform: scaleY(0.4);
-	  }  20% {
-	    transform: scaleY(1.0);
-	    -webkit-transform: scaleY(1.0);
-	  }
-	}
+        .spinner {
+            margin: 100px auto;
+            width: 50px;
+            height: 60px;
+            text-align: center;
+            font-size: 10px;
+        }
+
+        .spinner > div {
+            background-color: #B0B0B0;
+            height: 100%;
+            width: 4px;
+            display: inline-block;
+
+            -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+            animation: stretchdelay 1.2s infinite ease-in-out;
+        }
+
+        .spinner .rect2 {
+            -webkit-animation-delay: -1.1s;
+            animation-delay: -1.1s;
+        }
+
+        .spinner .rect3 {
+            -webkit-animation-delay: -1.0s;
+            animation-delay: -1.0s;
+        }
+
+        .spinner .rect4 {
+            -webkit-animation-delay: -0.9s;
+            animation-delay: -0.9s;
+        }
+
+        .spinner .rect5 {
+            -webkit-animation-delay: -0.8s;
+            animation-delay: -0.8s;
+        }
+
+        @-webkit-keyframes stretchdelay {
+            0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
+            20% { -webkit-transform: scaleY(1.0) }
+        }
+
+        @keyframes stretchdelay {
+            0%, 40%, 100% {
+                transform: scaleY(0.4);
+                -webkit-transform: scaleY(0.4);
+            }  20% {
+                   transform: scaleY(1.0);
+                   -webkit-transform: scaleY(1.0);
+               }
+        }
 
     </style>
 </head>
@@ -153,79 +154,82 @@
 <body>
 <div id="root">
     <header id="header">
-        <h1><a id="logo">乱码</a></h1>
-    	<p class="description">我的编程笔记</p>
-	    <nav id="nav-menu" role="navigation">
-	    	<a class="current" href="./">首页</a>
-	        <a class="current" href="https://yuque.com/page/luan.ma/about" target="_blank">关于</a>
-	        <a href="https://mibiao.app/domains" target="_blank">米表</a>
-	    </nav>
-	    <div class="link">
-	        <a target="_blank" href="https://github.com/xenv"><svg height="22" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="22" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a>
-	    </div>
-	</header>
-	<div id="main" role="main">
+        <h1><a id="logo">博客标题</a></h1>
+        <p class="description">博客描述</p>
+        <nav id="nav-menu" role="navigation">
+            <a class="current" href="./">首页</a>
+        </nav>
+        <div class="link">
+            <a target="_blank" href="https://github.com/xenv"><svg height="22" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="22" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a>
+        </div>
+    </header>
+    <div id="main" role="main">
 
-		<div class="spinner" v-show="loading">
-		  <div class="rect1"></div>
-		  <div class="rect2"></div>
-		  <div class="rect3"></div>
-		  <div class="rect4"></div>
-		  <div class="rect5"></div>
-		</div>
-	  	<div class="content">
-			<article class="post">
-				 <ul>
-					<li class="post-item" v-for="post in posts">
-						<div v-if="post.title === '博客首页'"></div> <!--这个用来在语雀那边返回这里的，这里判断掉不要-->
-						<div v-else :style="{paddingLeft: (post.depth-1) * 25 + 'px'}">
-							<a v-if = "post.slug === '#'" :style="{fontSize: post.depth == 1 ? '18px':'17px'}" v-text="post.title"></a>
-							<a v-else :href="'https://yuque.com/page/luan.ma/' + post.slug" target="_blank" class="link" v-text="post.title"></a>
-						</div>
-					</li>
-				</ul>
-			</article>
-		</div>
+        <div class="spinner" v-show="loading">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>
+        <div class="content">
+            <article class="post">
+                <ul>
+                    <li class="post-item" v-for="post in posts">
+                        <div v-if="post.title === '博客首页'"></div> <!--这个用来在语雀那边返回这里的，这里判断掉不要-->
+                        <div v-else :style="{paddingLeft: (post.depth-1) * 25 + 'px'}">
+                            <a v-if = "post.slug === '#'" :style="{fontSize: post.depth == 1 ? '18px':'17px'}" v-text="post.title"></a>
+                            <a v-else :href="'https://yuque.com/page/luan.ma/' + post.slug" target="_blank" class="link" v-text="post.title"></a>
+                            <span v-if="post.date" class="post-meta">
+							<span v-text="'/'"></span>
+							<time v-text="post.date"></time>
+							</span>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+        </div>
 
-	</div> 
-	<footer id="footer">
-		<div class="line">
-	        友情链接：<a href="#">暂无</a>
-	    </div>
-	    <div class="line">
-	    	© 2018 Luan.Ma Powered by <a target="_blank" href="https://github.com/xenv/teenyBlog">teenyBlog</a>
-		</div>
-	</footer>
+    </div>
+    <footer id="footer">
+        <div class="line">
+            友情链接：<a href="#">暂无</a>
+        </div>
+        <div class="line">
+            © 2018 Luan.Ma Powered by <a target="_blank" href="https://github.com/xenv/teenyBlog">teenyBlog</a>
+        </div>
+    </footer>
 </div>
-<script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
-<script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+<script src="https://static.nazhumi.com/luanma/vue.min.js"></script> <!-- 需替换 -->
 <script type="text/javascript">
-var app = new Vue({
-  el: '#main',
-  data: {
-    posts: [],
-    loading: true
-  	},
-   	methods: {
-        getPosts: function() {
-            var _this = this;
-            axios.get('https://szukd.applinzi.com/yq_proxy/list.php',{}) // 需要自行代理 
-            .then(function(res) {
-                _this.init(res);
-                _this.loading = false;
-            }).catch(function(res) {
-                console.log(res);
-            });
+    var app = new Vue({
+        el: '#main',
+        data: {
+            posts: [],
+            loading: true
         },
-        init: function(res) {
-            this.posts = res.data.data;
+        methods: {
+            getPosts: function() {
+                var _this = this;
+                var ajax = new XMLHttpRequest();
+                ajax.open('get','https://static.nazhumi.com/luanma/list.json'); // 需替换
+                ajax.onreadystatechange = function () {
+                    if (ajax.readyState===4 && ajax.status===200) {
+                        _this.init(JSON.parse(ajax.responseText));
+                        _this.loading = false;
+                    }
+                };
+                ajax.send();
+            },
+            init: function(res) {
+                this.posts = res.data;
+            }
+        },
+        mounted:function(){
+            this.getPosts();
         }
-    },
-    mounted:function(){
-        this.getPosts();
-    }
-})
+    })
 </script>
 
-
+            
 </body>
