@@ -110,3 +110,20 @@ TeenyBlog 2.0 是我自己摸索总结出来的一套个人静态博客的解决
 7. 开启CDN，绑定域名到CDN。不开启CDN则绑定域名到OSS。
 8. 修改 index.html 中的 vue.min.js 和 list.json 的路径为你的 OSS 路径。
 9. 更新博文后，访问云函数提供的地址，即可同步语雀数据到 OSS。如果是语雀企业用户，则可以配置 WebHook。
+
+
+## 图片演示
+#### <span data-type="color" style="color:rgb(0, 0, 0)"><span data-type="background" style="background-color:rgb(255, 255, 255)">首页通过语雀后台完全可定制：</span></span>
+
+
+![image.png | left | 690x314](https://cdn.yuque.com/yuque/0/2018/png/102759/1531918188953-d4d204f5-8c54-4437-825a-984cc4eee74d.png "")
+
+#### <span data-type="color" style="color:rgb(0, 0, 0)"><span data-type="background" style="background-color:rgb(255, 255, 255)">可视化 Markdown 后台</span></span>
+
+
+![image.png | left | 690x137](https://cdn.yuque.com/yuque/0/2018/png/102759/1531918204246-0711bb70-48b9-4afd-9868-8a2f35bbd9ce.png "")
+
+#### <span data-type="color" style="color:rgb(0, 0, 0)"><span data-type="background" style="background-color:rgb(255, 255, 255)">云函数后台</span></span>
+
+
+![image.png | left | 690x635](https://cdn.yuque.com/yuque/0/2018/png/102759/1531918216843-093ba1cf-ceef-403b-9d2c-a0d3c4ade1c8.png "")
