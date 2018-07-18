@@ -1,4 +1,4 @@
-# teenyBlog
+# TeenyBlog 2.0
 
 ## 简介
 
