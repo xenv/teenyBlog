@@ -2,7 +2,7 @@
 
 ## 简介
 
----
+
 
 TeenyBlog 2.0 是我自己摸索总结出来的一套个人静态博客的解决方案。
 
@@ -10,14 +10,14 @@ TeenyBlog 2.0 是我自己摸索总结出来的一套个人静态博客的解决
 
 1. __写博友好__：支持 Markdown / 富文本，支持预览，支持复制传图和提供图床，支持 UML 图 / 思维导图
 2. __读博友好__：访问速度快，稳定，界面效果良好，有 TOC 导航
-3. __维护友好：__免维护，一键发布，极高可用率，极低的价格
+3. __维护友好__：免维护，一键发布，极高可用率，极低的价格
 
 * 演示： https://luan.ma
 * 项目地址：[https://github.com/xenv/teenyBlog](https://github.com/xenv/teenyBlog)
 
 ## 方案简介
 
----
+
 
 
 <div id="uepesa" data-type="puml" data-display="block" data-align="left" data-src="https://cdn.yuque.com/__puml/3a9061ee9ef48d6e93aaaabf849ced22.svg" data-width="503" data-height="390" data-text="%40startuml%0A%0Aautonumber%0A%0A%E5%8D%9A%E4%B8%BB%20-%3E%20%E8%AF%AD%E9%9B%80%3A%20%20%E5%86%99%E5%8D%9A%E5%AE%A2%20%0Aactivate%20%E8%AF%AD%E9%9B%80%0Adeactivate%20%E8%AF%AD%E9%9B%80%0A%0A%E5%8D%9A%E4%B8%BB%20-%3E%20%E4%BA%91%E5%87%BD%E6%95%B0%3A%20%E8%A7%A6%E5%8F%91%E5%90%8C%E6%AD%A5%0Aactivate%20%E4%BA%91%E5%87%BD%E6%95%B0%0A%E4%BA%91%E5%87%BD%E6%95%B0%20-%3E%20%E8%AF%AD%E9%9B%80%3A%20%E6%8B%89%E5%8F%96%E6%95%B0%E6%8D%AE%0Aactivate%20%E8%AF%AD%E9%9B%80%0A%E8%AF%AD%E9%9B%80%20-%3E%20%E4%BA%91%E5%87%BD%E6%95%B0%3A%20%E8%BF%94%E5%9B%9E%E6%95%B0%E6%8D%AE%0Adeactivate%20%E8%AF%AD%E9%9B%80%0A%E4%BA%91%E5%87%BD%E6%95%B0%20-%3E%20OSS%3A%20%E5%AD%98%E6%94%BE%E6%95%B0%E6%8D%AE%0Aactivate%20OSS%0Adeactivate%20OSS%0Adeactivate%20%E4%BA%91%E5%87%BD%E6%95%B0%0A%0ACDN%20-%3E%20OSS%3A%20%E7%BC%93%E5%AD%98%E6%95%B0%E6%8D%AE%0Aactivate%20OSS%0Adeactivate%20OSS%0A%0A%E7%94%A8%E6%88%B7%20-%3E%20CDN%3A%20%E5%B0%B1%E8%BF%91%E8%AE%BF%E9%97%AE%0A%0A%0A%40enduml"><img src="https://cdn.yuque.com/__puml/3a9061ee9ef48d6e93aaaabf849ced22.svg" width="503"/></div>
@@ -30,7 +30,7 @@ TeenyBlog 2.0 是我自己摸索总结出来的一套个人静态博客的解决
 
 ## 方案部署详解
 
----
+
 
 1. 写博客：在 [https://yuque.com/](https://yuque.com/) 注册账号并新建知识库，新建文章后，在知识库首页编辑目录，可以自由控制展示规则。
 2. 选择一个 __OSS__ 方案，本站使用阿里云的 OSS ，选择海外机房不用备案可以直接绑定域名，如果已备案则绑定到CDN上
@@ -108,6 +108,5 @@ TeenyBlog 2.0 是我自己摸索总结出来的一套个人静态博客的解决
 
         ```
 7. 开启CDN，绑定域名到CDN。不开启CDN则绑定域名到OSS。
-8. 更新博文后，访问云函数提供的地址，即可同步语雀数据到 OSS。如果是语雀企业用户，则可以配置 WebHook。
-
-
+8. 修改 index.html 中的 vue.min.js 和 list.json 的路径为你的 OSS 路径。
+9. 更新博文后，访问云函数提供的地址，即可同步语雀数据到 OSS。如果是语雀企业用户，则可以配置 WebHook。
