@@ -1,5 +1,9 @@
 # TeenyBlog 2.0
 
+## 新动向
+
+由于已经有了足够好用的语雀到静态博客的同步插件，__该项目已废弃__，新的部署方法见：[https://luan.ma/post/yuque2blog/](https://luan.ma/post/yuque2blog/) ，可以非常优雅的同步语雀文章到静态博客了。
+
 ## 简介
 
 
